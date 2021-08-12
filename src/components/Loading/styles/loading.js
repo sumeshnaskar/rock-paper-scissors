@@ -31,6 +31,6 @@ export const Text = styled.h1`
         max-width: 7em;
         white-space: nowrap;
         color: #ADFC90;
-        animation: ${loading} 4s linear infinite alternate;
+        animation: ${loading} 1.5s linear infinite alternate;
     }
 `

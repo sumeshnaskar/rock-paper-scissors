@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 `
 export const Title = styled.h1`
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     width: 60%;
     margin: 0 auto;
@@ -24,7 +24,8 @@ export const Subtitle = styled.h2`
 export const Text = styled.h3`
     width: 25%; 
     color: #dea431;
-    border: 1px dashed #b942ff;
+    border: 1px solid #b942ff;
+
     padding: 1em 1em;
     text-align: center;
     margin: 0 auto;
@@ -46,7 +47,6 @@ export const Button = styled.button`
     font-size: 1em;
     width: 120px;
     font-weight: 700;
-
 
     &:hover{
         background: #17bf8f;

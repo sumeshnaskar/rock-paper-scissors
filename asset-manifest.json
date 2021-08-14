@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/rock-paper-scissors/static/js/main.348ff34e.chunk.js",
+    "main.js.map": "/rock-paper-scissors/static/js/main.348ff34e.chunk.js.map",
+    "runtime-main.js": "/rock-paper-scissors/static/js/runtime-main.f2244c56.js",
+    "runtime-main.js.map": "/rock-paper-scissors/static/js/runtime-main.f2244c56.js.map",
+    "static/js/2.8a92d908.chunk.js": "/rock-paper-scissors/static/js/2.8a92d908.chunk.js",
+    "static/js/2.8a92d908.chunk.js.map": "/rock-paper-scissors/static/js/2.8a92d908.chunk.js.map",
+    "index.html": "/rock-paper-scissors/index.html",
+    "static/js/2.8a92d908.chunk.js.LICENSE.txt": "/rock-paper-scissors/static/js/2.8a92d908.chunk.js.LICENSE.txt",
+    "static/media/luis-quintero-1M-7-W6wHb8-unsplash.59bcf6d5.jpg": "/rock-paper-scissors/static/media/luis-quintero-1M-7-W6wHb8-unsplash.59bcf6d5.jpg",
+    "static/media/mika-korhonen-Xodzxosar18-unsplash.0da92547.jpg": "/rock-paper-scissors/static/media/mika-korhonen-Xodzxosar18-unsplash.0da92547.jpg",
+    "static/media/nathan-fertig-y0HerwKQLMk-unsplash.bb9c75a4.jpg": "/rock-paper-scissors/static/media/nathan-fertig-y0HerwKQLMk-unsplash.bb9c75a4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2244c56.js",
+    "static/js/2.8a92d908.chunk.js",
+    "static/js/main.348ff34e.chunk.js"
+  ]
+}

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
-
 `
 export const Title = styled.h1`
     font-size: 4em;
@@ -13,6 +12,10 @@ export const Title = styled.h1`
     margin-top: 0.5em;
     color: #bf1733;
     font-weight: 700;
+
+    @media(max-width: 950px){
+        font-size: 3em;
+    }
 `
 export const Subtitle = styled.h2`
     font-weight: 700;
@@ -20,16 +23,25 @@ export const Subtitle = styled.h2`
     color: #17bf8f;
     text-align: center;
     margin-bottom: 2em;
+
+    @media(max-width: 950px){
+        line-height: 1.8;
+        font-size: 1em;
+    }
 `
 export const Text = styled.h3`
-    width: 25%; 
+    width: 250px; 
     color: #dea431;
-    border: 1px solid #b942ff;
-
+    border: 2px solid #b942ff;
     padding: 1em 1em;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 2em;
+    
+
+    @media(max-width: 950px){
+        width: 150px;
+        padding: .5em .5em;
+    }
 `
 
 export const ButtonWrapper = styled.div`
@@ -38,18 +50,56 @@ export const ButtonWrapper = styled.div`
 `
 
 export const Button = styled.button`
-    background: #b942ff;
+    background: url(${ ({ src }) => src }) no-repeat center ;
+    background-blend-mode: screen;
+    background-size: cover;
     color: white;
-    padding: 0.5em 1em;
-    border: none;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
     margin: 0 0.5em;
     cursor: pointer;
-    font-size: 1em;
-    width: 120px;
+    font-size: 1em;   
     font-weight: 700;
 
     &:hover{
-        background: #17bf8f;
+        color: #17bf8f;
+        border: 2px solid #17bf8f;
+        
+    }
+
+    @media(max-width: 950px){
+        margin-top: 2em;
     }
 `
+export const Image = styled.div`
+    background: url(${ ({ src }) => src }) no-repeat center;
+    background-size: cover;
+    width:250px;
+    height: 250px;
+    transform: ${({ isPlayer })=>(isPlayer ? 'rotate(90deg)' : 'rotate(-90deg)')};
+    border: 2px solid white;
+    border-radius: 10%;
+
+    @media(max-width: 950px){
+        width: 125px;
+        height: 125px;
+    }
+`
+
+export const SmallText = styled.p`
+    color: #b942ff;
+    font-size: 0.5rem;   
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0;
+
+    @media(max-width: 950px){
+        margin-top: 3em;
+        font-size: 0.3rem;
+    }
+`
+
+
 

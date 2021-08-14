@@ -1,16 +1,24 @@
 import React from "react"
+
 import { Game } from "../components/Game"
 import { useLogic } from "../hooks/useLogic"
 import { buttons, playerText, botText } from "../constants/array"
 
+import rock from "../images/luis-quintero-1M-7-W6wHb8-unsplash.jpg"
+import paper from "../images/mika-korhonen-Xodzxosar18-unsplash.jpg"
+import scissors from "../images/nathan-fertig-y0HerwKQLMk-unsplash.jpg"
+
 export function GameContainer(){
-    const [ {round, playerWin, botWin, displayWinner}, dispatch ] = useLogic()
+    const [ {round, playerWin, botWin, displayWinner, playerImage, botImage}, dispatch ] = useLogic()
     const randomIndex = () =>  Math.floor(Math.random() * 3)
+    const display = [rock, paper, scissors]
+    const style = { color: "#17bf8f"} 
     
 
     const computeWinner = (value) => {
         const botPick = randomIndex()
         const playerPick = parseInt(value)
+        dispatch({type:"ROUNDINC", setBotImage: display[botPick], setPlayerImage: display[playerPick]})
         if ( playerPick === botPick ) return "Tie"
         switch(value){
             case "0": return botPick === 1 ? "Bot" : "Player"
@@ -24,7 +32,6 @@ export function GameContainer(){
         const { value } = event.target
         const winner = computeWinner(value)
         const index = randomIndex()
-        dispatch({type:"ROUNDINC"})
         switch(winner){
             case "Bot": dispatch({type:"BOTWIN", text: `Bot says "${botText[index]}"`})
                 break
@@ -37,24 +44,49 @@ export function GameContainer(){
     return(
         <>
             <Game>
-                <Game.Title> Round {round}</Game.Title>
-                <Game.Subtitle>{displayWinner}</Game.Subtitle>
-                <Game.Text>Player {playerWin}</Game.Text>
-                <Game.Text>Bot Ropasci {botWin}</Game.Text>
+                <Game.Title> 
+                    Round <span style={ style }>{round}</span>
+                </Game.Title>
+
+                <Game.Subtitle>
+                    <span 
+                    style={{color: "#dea431", 
+                    border: "2px solid white", 
+                    padding: "0.5em",
+                    borderRadius: "50px", 
+                    marginRight: "0.5em"}}>
+                        Winning note 
+                    </span>
+                    {displayWinner}
+                </Game.Subtitle>
+
+                <div style={{display: "flex", justifyContent: "space-around"}}>
+                    <Game.Image isPlayer={true} src={playerImage}/>
+                    <div style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
+                        <Game.Text>Player - <span style={ style }>{playerWin}</span></Game.Text>
+                        <Game.Text>Bot - <span style={ style }>{botWin}</span></Game.Text>
+                    </div>
+                    <Game.Image isPlayer={false} src={botImage}/>             
+                </div>
+                
                 <Game.ButtonWrapper>
                     {buttons.map((button, index)=>(
-                        <Game.Button 
+                        <Game.Button                           
                             key={`button ${index}`}
+                            src={display[index]}
                             onClick={handleChange} 
                             value={index}
                         >
                             {button}
-                        </Game.Button>
+                        </Game.Button>                       
                     ))}
                 </Game.ButtonWrapper>
             </Game>
-        
-        
+
+            <Game.SmallText>Photos by Unsplash: @luis quintero(Rock👊) 
+                @mika korehonen(Paper✋) and
+                @Nathan Fertig(Scissors✌️) 
+            </Game.SmallText>
         </>
     )
 }

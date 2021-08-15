@@ -58,14 +58,14 @@ export function GameContainer(){
                 <Game.Subtitle>
                     <span 
                     style={{color: "#dea431", 
-                    border: "2px solid white", 
+                    border: "2px solid #b942ff", 
                     padding: "0.5em",
                     borderRadius: "50px", 
                     marginRight: "0.5em",
                     textAlign:"center"}}>
                         Winning note 
                     </span>
-                    {displayWinner}
+                    {round === 1 ? "Let's Play!" : displayWinner}
                 </Game.Subtitle>
 
                 <Game.InnerContainer>

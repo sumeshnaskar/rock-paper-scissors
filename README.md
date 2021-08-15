@@ -1,7 +1,7 @@
 # rock-paper-scissors
-Game link - https://sumeshnaskar.github.io/rock-paper-scissors/
+Website - https://sumeshnaskar.github.io/rock-paper-scissors/
 
-Created using create-react-app and Implemented the following
+Created using create-react-app and implemented the following topics
 1. Compound components 
 2. styled components
 3. hooks (useState, useEffect, useReducer)

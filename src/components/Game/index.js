@@ -1,5 +1,16 @@
 import React from "react"
-import { Container, Title, Subtitle, Text, Image, ButtonWrapper, Button, SmallText} from "./styles/game"
+import { 
+    Container, 
+    Title, 
+    Subtitle, 
+    Text, 
+    Image, 
+    ButtonWrapper, 
+    Button, 
+    SmallText, 
+    Wrapper,
+    InnerContainer
+} from "./styles/game"
 
 export function Game({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -31,4 +42,12 @@ Game.Image = function GameImage({ children, ...restProps }){
 
 Game.SmallText = function GameSmallText({children, ...restProps }){
     return <SmallText {...restProps}>{children}</SmallText>
+}
+
+Game.Wrapper = function GameWrapper({ children, ...restProps}){
+    return <Wrapper {...restProps}>{children}</Wrapper>
+}
+
+Game.InnerContainer = function GameInnerContainer({ children, ...restProps}){
+    return <InnerContainer {...restProps}>{children}</InnerContainer>
 }

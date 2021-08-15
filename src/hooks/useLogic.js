@@ -13,12 +13,13 @@ export function useLogic(){
                 return { ...state, botWin: state.botWin + 1, displayWinner: action.text }
             case "PLAYERWIN":
                 return { ...state, playerWin: state.playerWin + 1, displayWinner: action.text}
-            default: return { ...state, displayWinner: action.text}
+            default: return { ...state, noWin: state.noWin + 1, displayWinner: action.text}
         }
     },{
         round: 1,
         playerWin: 0,
         botWin: 0,
+        noWin: 0,
         displayWinner: '',
         playerImage: `${rock}`,
         botImage: `${rock}`

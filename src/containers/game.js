@@ -9,11 +9,18 @@ import paper from "../images/mika-korhonen-Xodzxosar18-unsplash.jpg"
 import scissors from "../images/nathan-fertig-y0HerwKQLMk-unsplash.jpg"
 
 export function GameContainer(){
-    const [ {round, playerWin, botWin, displayWinner, playerImage, botImage}, dispatch ] = useLogic()
+    const [{
+        round, 
+        playerWin, 
+        botWin, 
+        noWin, 
+        displayWinner, 
+        playerImage, 
+        botImage
+    }, dispatch ] = useLogic()
     const randomIndex = () =>  Math.floor(Math.random() * 3)
     const display = [rock, paper, scissors]
     const style = { color: "#17bf8f"} 
-    
 
     const computeWinner = (value) => {
         const botPick = randomIndex()
@@ -54,39 +61,49 @@ export function GameContainer(){
                     border: "2px solid white", 
                     padding: "0.5em",
                     borderRadius: "50px", 
-                    marginRight: "0.5em"}}>
+                    marginRight: "0.5em",
+                    textAlign:"center"}}>
                         Winning note 
                     </span>
                     {displayWinner}
                 </Game.Subtitle>
 
-                <div style={{display: "flex", justifyContent: "space-around"}}>
-                    <Game.Image isPlayer={true} src={playerImage}/>
-                    <div style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
+                <Game.InnerContainer>
+                    <Game.Wrapper>
+                        <Game.Image isPlayer={true} src={playerImage}/>
+                        <Game.ButtonWrapper>
+                        {buttons.map((button, index)=>(
+                            <Game.Button                           
+                                key={`button ${index}`}
+                                src={display[index]}
+                                onClick={handleChange} 
+                                value={index}
+                            >
+                                {button}
+                            </Game.Button>                       
+                        ))}
+                        </Game.ButtonWrapper>
+                    </Game.Wrapper>
+                   
+                    <Game.Wrapper> 
                         <Game.Text>Player - <span style={ style }>{playerWin}</span></Game.Text>
                         <Game.Text>Bot - <span style={ style }>{botWin}</span></Game.Text>
-                    </div>
-                    <Game.Image isPlayer={false} src={botImage}/>             
-                </div>
-                
-                <Game.ButtonWrapper>
-                    {buttons.map((button, index)=>(
-                        <Game.Button                           
-                            key={`button ${index}`}
-                            src={display[index]}
-                            onClick={handleChange} 
-                            value={index}
-                        >
-                            {button}
-                        </Game.Button>                       
-                    ))}
-                </Game.ButtonWrapper>
-            </Game>
+                        <Game.Text>Tied - <span style={ style }>{noWin}</span></Game.Text>
+                    </Game.Wrapper>
 
-            <Game.SmallText>Photos by Unsplash: @luis quintero(Rock👊) 
+                    <Game.Wrapper> 
+                        <Game.Image isPlayer={false} src={botImage}/>   
+                    </Game.Wrapper>          
+                </Game.InnerContainer>
+                
+
+                <Game.SmallText>Photos by Unsplash: @luis quintero(Rock👊) 
                 @mika korehonen(Paper✋) and
                 @Nathan Fertig(Scissors✌️) 
-            </Game.SmallText>
+                </Game.SmallText>
+            </Game>
+
+
         </>
     )
 }

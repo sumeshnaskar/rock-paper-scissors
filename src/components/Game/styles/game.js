@@ -12,7 +12,6 @@ export const InnerContainer = styled.div`
     @media(max-width:950px){
         flex-direction: column;
         justify-content: center;
-        height: 65vh;
     }
 `
 export const Title = styled.h1`
@@ -38,6 +37,7 @@ export const Subtitle = styled.h2`
     @media(max-width: 950px){
         line-height: 1.8;
         font-size: 1em;
+        margin-bottom: 1em;
     }
 `
 export const Text = styled.h3`
@@ -55,10 +55,10 @@ export const Text = styled.h3`
     
 
     @media(max-width: 950px){
-        width: 100px;
+        width: 30%;
         font-size: 1em;
-        padding: .5em .5em;
-        margin: 1em;
+        padding: .25em .25em;
+        margin: .5em;
     }
 `
 
@@ -67,7 +67,7 @@ export const ButtonWrapper = styled.div`
     justify-content: center;
 
     @media(max-width:950px){
-        width: 50%;
+        width: 100%;
         margin: 0.5em auto;
     }
 `
@@ -89,13 +89,13 @@ export const Button = styled.button`
 
     &:hover{
         color: #17bf8f;
-        border: 2px solid #17bf8f;
-        margin: ;
+        border: 2px solid #17bf8f;   
+        transform: translateY(-0.5em);
+        
     }
 
     @media(max-width:950px){
-        margin: 0.5em;
-        font-size: .55em;
+        font-size: .5em;
     }
 
 `
@@ -110,8 +110,8 @@ export const Image = styled.div`
     align-item: center;
 
     @media(max-width: 950px){
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
 `
 

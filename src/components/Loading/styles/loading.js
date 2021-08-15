@@ -33,4 +33,12 @@ export const Text = styled.h1`
         color: #ADFC90;
         animation: ${loading} 1.5s linear infinite alternate;
     }
+
+    @media(max-width: 950px){
+        font-size: 2em;
+
+        &:before{
+            max-width: 6em;
+        }
+    }
 `

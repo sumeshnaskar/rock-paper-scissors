@@ -10,7 +10,7 @@ export const InnerContainer = styled.div`
     justify-content: space-around;
 
     @media(max-width:950px){
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
     }
 `
@@ -24,7 +24,8 @@ export const Title = styled.h1`
     font-weight: 700;
 
     @media(max-width: 950px){
-        font-size: 3em;
+        font-size: 2.2em;
+        margin-top: .5em;
     }
 `
 export const Subtitle = styled.h2`
@@ -53,12 +54,12 @@ export const Text = styled.h3`
         margin-bottom: 0;
     }
     
-
     @media(max-width: 950px){
         width: 30%;
         font-size: 1em;
         padding: .25em .25em;
-        margin: .5em;
+        margin: 1.5em .5em;
+        
     }
 `
 
@@ -68,7 +69,7 @@ export const ButtonWrapper = styled.div`
 
     @media(max-width:950px){
         width: 100%;
-        margin: 0.5em auto;
+        margin-top: 1em;
     }
 `
 
@@ -124,6 +125,7 @@ export const SmallText = styled.p`
 
     @media(max-width: 950px){
         font-size: 0.3rem;
+        margin-top: 2em;
     }
 `
 
